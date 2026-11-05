@@ -1,0 +1,8 @@
+# CloudVault - upload next to index.php (Apache / InfinityFree)
+Options -Indexes
+DirectoryIndex index.php
+
+# never serve backups, logs, configs or SQL dumps, even if someone leaves them here
+<FilesMatch "(?i)(\.(bak|old|orig|save|swp|sql|log|ini|inc|txt)|~)$|^cloudvault\.config\.php$|^\.">
+    Require all denied
+</FilesMatch>
